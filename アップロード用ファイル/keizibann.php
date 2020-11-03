@@ -67,7 +67,7 @@
                 $stmt = $pdo->query($sql);
                 $results = $stmt->fetchAll();
                 foreach ($results as $row){
-                //削除番号が投稿番号と、入力したパスワードが投稿したときのパスワードと同じなら
+                //削除番号が投稿番号と、入力したパスワードが投稿したときのパスワードと同じならtrue
                     if($row['id']==$_POST['delete_num']&&$row['password']==$_POST['password']){
                         $sql = 'delete from mission5 where id=:id';
                         $stmt = $pdo->prepare($sql);
